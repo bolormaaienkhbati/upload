@@ -40,7 +40,7 @@ db.mongoose
         process.exit();
     });
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.json({msg: 'Hello World!'});
 });
 app.post('/upload',async (req, res) => {
    
