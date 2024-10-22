@@ -1,5 +1,5 @@
 module.exports = {
-  HOST: "mongodb://elearn_hangifheso:a1925886e06418a3b75c7a3dd5070772d5ceb85e@aulnb.h.filess.io:27018/elearn_hangifheso",
+  HOST: "mongodb://elearn_natureago:9123a499e47158d8df3453974bf692f097563949@9wme2.h.filess.io:27017/elearn_natureago",
   PORT: 27017,
-  DB: "elearn_hangifheso"
+  DB: "elearn_natureago"
 };
