@@ -100,6 +100,10 @@ app.post("/updateVideoStatus", async (req, res)=>{
     console.log("vidoes length ", videos.length)
     return res.json({success:false})
 })
+app.get("/check", async(req, res)=>{
+
+    return res.json({success:true, list:[]})
+})
 
 /* image upload */
 app.post('/image', (req, res) => {
@@ -123,44 +127,7 @@ app.post('/image', (req, res) => {
     });
 });
 const fs = require('fs');
-app.get("/remove/image/", (req, res)=>{
-    const p = req.query
-    console.log("p ", req.query)
-    let filePath = __dirname + '/image/'+p.path;
-    //filePath = '/uploadImagecopy/image/02b14c36-0416-4c6a-b1c5-ff4d78fe8e0c.jpg'; // Replace with the actual path to your file
-    if(p?.path==null|| p?.path==undefined||p?.path=='null'||p?.path==''){
-        return  res.json({success:false, message:"Empty path"})
-    }
-    // Remove the file
-    fs.unlink(filePath, (err) => {
-      if (err) {
-        console.error(`Error removing file: ${err}`);
-        return;
-      }
-    
-      console.log(`File ${filePath} has been successfully removed.`);
-    });
-    res.json({success:true})
-})
-app.get("/remove/video/", (req, res)=>{
-    const p = req.query
-    console.log("p ", req.query)
-    let filePath = __dirname + '/upload/'+p.path;
-    //filePath = '/uploadImagecopy/image/02b14c36-0416-4c6a-b1c5-ff4d78fe8e0c.jpg'; // Replace with the actual path to your file
-    if(p?.path==null|| p?.path==undefined||p?.path=='null'||p?.path==''){
-        return  res.json({success:false, message:"Empty path"})
-    }
-    // Remove the file
-    fs.unlink(filePath, (err) => {
-      if (err) {
-        console.error(`Error removing file: ${err}`);
-        return;
-      }
-    
-      console.log(`File ${filePath} has been successfully removed.`);
-    });
-    res.json({success:true})
-})
+
 //uploadImagecopy/image/02b14c36-0416-4c6a-b1c5-ff4d78fe8e0c.jpg
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
