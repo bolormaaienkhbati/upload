@@ -143,4 +143,3 @@ function toHoursAndMinutes(totalSeconds) {
     return { h: `${hours<10?'0'+hours:hours}`, m: `${minutes<10?'0'+minutes: minutes}`, s: `${sec<10?'0'+sec:sec}` };
   }
 
-//https://pqina.nl/blog/upload-image-with-nodejs/
